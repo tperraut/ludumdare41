@@ -1,0 +1,79 @@
+[gd_scene load_steps=32 format=2]
+
+[ext_resource path="res://characters/Character.tscn" type="PackedScene" id=1]
+[ext_resource path="res://characters/ennemi/Ennemi.gd" type="Script" id=2]
+[ext_resource path="res://spells/fireball/Fireball.tscn" type="PackedScene" id=3]
+[ext_resource path="res://weapon/Weapon.tscn" type="PackedScene" id=4]
+[ext_resource path="res://characters/ennemi/sprites/frame0000.png" type="Texture" id=5]
+[ext_resource path="res://characters/ennemi/sprites/frame0001.png" type="Texture" id=6]
+[ext_resource path="res://characters/ennemi/sprites/frame0002.png" type="Texture" id=7]
+[ext_resource path="res://characters/ennemi/sprites/frame0003.png" type="Texture" id=8]
+[ext_resource path="res://characters/ennemi/sprites/frame0004.png" type="Texture" id=9]
+[ext_resource path="res://characters/ennemi/sprites/frame0005.png" type="Texture" id=10]
+[ext_resource path="res://characters/ennemi/sprites/frame0006.png" type="Texture" id=11]
+[ext_resource path="res://characters/ennemi/sprites/frame0007.png" type="Texture" id=12]
+[ext_resource path="res://characters/ennemi/sprites/frame0008.png" type="Texture" id=13]
+[ext_resource path="res://characters/ennemi/sprites/frame0009.png" type="Texture" id=14]
+[ext_resource path="res://characters/ennemi/sprites/frame0010.png" type="Texture" id=15]
+[ext_resource path="res://characters/ennemi/sprites/frame0011.png" type="Texture" id=16]
+[ext_resource path="res://characters/ennemi/sprites/frame0012.png" type="Texture" id=17]
+[ext_resource path="res://characters/ennemi/sprites/frame0013.png" type="Texture" id=18]
+[ext_resource path="res://characters/ennemi/sprites/frame0014.png" type="Texture" id=19]
+[ext_resource path="res://characters/ennemi/sprites/frame0015.png" type="Texture" id=20]
+[ext_resource path="res://characters/ennemi/sprites/frame0016.png" type="Texture" id=21]
+[ext_resource path="res://characters/ennemi/sprites/frame0017.png" type="Texture" id=22]
+[ext_resource path="res://characters/ennemi/sprites/frame0018.png" type="Texture" id=23]
+[ext_resource path="res://characters/ennemi/sprites/frame0019.png" type="Texture" id=24]
+[ext_resource path="res://characters/ennemi/sprites/frame0020.png" type="Texture" id=25]
+[ext_resource path="res://characters/ennemi/sprites/frame0021.png" type="Texture" id=26]
+[ext_resource path="res://characters/ennemi/sprites/frame0022.png" type="Texture" id=27]
+[ext_resource path="res://characters/ennemi/sprites/frame0023.png" type="Texture" id=28]
+[ext_resource path="res://characters/ennemi/sprites/frame0024.png" type="Texture" id=29]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ) ],
+"loop": true,
+"name": "default",
+"speed": 6.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 79.1202, 74.0807 )
+
+[node name="Ennemi" instance=ExtResource( 1 )]
+
+position = Vector2( 1421.92, 657.188 )
+scale = Vector2( 0.2, 0.2 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+spells = [ ExtResource( 3 ) ]
+speed = 100
+weapon = ExtResource( 4 )
+
+[node name="Sprite" parent="." index="0"]
+
+frames = SubResource( 1 )
+frame = 11
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( 65.5237, -29.5001 )
+scale = Vector2( 5.62511, 3.87438 )
+shape = SubResource( 2 )
+
+[node name="WeaponPosition" parent="." index="2"]
+
+position = Vector2( -591.563, -112.343 )
+
+[node name="CollisionShape2D" parent="DetectRadius" index="0"]
+
+position = Vector2( -5.81702, -4.46796 )
+
+[connection signal="body_entered" from="DetectRadius" to="." method="_on_DetectRadius_body_entered"]
+
+

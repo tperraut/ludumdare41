@@ -1,0 +1,54 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://spells/Spell.tscn" type="PackedScene" id=1]
+[ext_resource path="res://spells/lightning/sprites/frame0000.png" type="Texture" id=2]
+[ext_resource path="res://spells/lightning/sprites/frame0001.png" type="Texture" id=3]
+[ext_resource path="res://spells/lightning/sprites/frame0002.png" type="Texture" id=4]
+[ext_resource path="res://spells/lightning/sprites/frame0003.png" type="Texture" id=5]
+[ext_resource path="res://spells/lightning/sprites/frame0004.png" type="Texture" id=6]
+[ext_resource path="res://spells/lightning/sprites/frame0005.png" type="Texture" id=7]
+[ext_resource path="res://spells/lightning/sprites/frame0006.png" type="Texture" id=8]
+[ext_resource path="res://spells/lightning/sprites/frame0007.png" type="Texture" id=9]
+[ext_resource path="res://spells/lightning/sprites/frame0008.png" type="Texture" id=10]
+[ext_resource path="res://spells/lightning/sprites/frame0009.png" type="Texture" id=11]
+[ext_resource path="res://spells/lightning/sprites/frame0010.png" type="Texture" id=12]
+[ext_resource path="res://spells/lightning/sprites/frame0011.png" type="Texture" id=13]
+[ext_resource path="res://spells/lightning/sprites/frame0012.png" type="Texture" id=14]
+[ext_resource path="res://spells/lightning/sprites/frame0013.png" type="Texture" id=15]
+[ext_resource path="res://spells/lightning/sprites/frame0014.png" type="Texture" id=16]
+[ext_resource path="res://spells/lightning/sprites/frame0015.png" type="Texture" id=17]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "default",
+"speed": 15.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+
+custom_solver_bias = 0.0
+radius = 91.9709
+
+[node name="Lightning" instance=ExtResource( 1 )]
+
+position = Vector2( 104.383, 185.979 )
+scale = Vector2( 0.2, 0.2 )
+_sections_unfolded = [ "Transform" ]
+speed = 500
+lifetime = 2.0
+
+[node name="Sprite" parent="." index="0"]
+
+frames = SubResource( 1 )
+frame = 1
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( -1.37543, 0.152771 )
+shape = SubResource( 2 )
+
+

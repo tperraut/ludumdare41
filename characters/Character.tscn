@@ -1,0 +1,68 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://characters/Character.gd" type="Script" id=1]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 106.524
+
+[node name="Character" type="KinematicBody2D"]
+
+position = Vector2( 96.9404, 59.2738 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+spells = null
+speed = 10
+detect_radius = 500
+health = 100
+weapon = null
+
+[node name="Sprite" type="AnimatedSprite" parent="." index="0"]
+
+animation = "default"
+_sections_unfolded = [ "Visibility" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+[node name="WeaponPosition" type="Position2D" parent="." index="2"]
+
+[node name="DetectRadius" type="Area2D" parent="." index="3"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectRadius" index="0"]
+
+position = Vector2( -1.47018, -1.47018 )
+shape = SubResource( 1 )
+
+[node name="CastTimer" type="Timer" parent="." index="4"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
+
+[node name="Tween" type="Tween" parent="." index="5"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
+[connection signal="dead" from="." to="." method="_on_dead"]
+
+[connection signal="timeout" from="CastTimer" to="." method="_on_CastTimer_timeout"]
+
+

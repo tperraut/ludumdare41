@@ -1,0 +1,89 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://gui/menu/Menu.gd" type="Script" id=1]
+[ext_resource path="res://gui/menu/attack/Attack.tscn" type="PackedScene" id=2]
+[ext_resource path="res://gui/menu/protection/Protection.tscn" type="PackedScene" id=3]
+[ext_resource path="res://gui/menu/heal/Heal.tscn" type="PackedScene" id=4]
+[ext_resource path="res://gui/fonts/font.tres" type="DynamicFont" id=5]
+
+[node name="Menu" type="Container"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 1 )
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="TabContainer" type="TabContainer" parent="." index="0"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+tab_align = 1
+tabs_visible = true
+_sections_unfolded = [ "Anchor", "Margin" ]
+
+[node name="Attack" parent="TabContainer" index="0" instance=ExtResource( 2 )]
+
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Protection" parent="TabContainer" index="1" instance=ExtResource( 3 )]
+
+visible = false
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Heal" parent="TabContainer" index="2" instance=ExtResource( 4 )]
+
+visible = false
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Button" type="Button" parent="." index="1"]
+
+anchor_left = 0.8
+anchor_top = 0.8
+anchor_right = 0.95
+anchor_bottom = 0.95
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 5 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "SKIP"
+flat = false
+align = 1
+_sections_unfolded = [ "Anchor", "Margin", "Visibility", "custom_fonts" ]
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+
+

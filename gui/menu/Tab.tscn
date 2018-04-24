@@ -1,0 +1,346 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://gui/menu/Label.tscn" type="PackedScene" id=1]
+[ext_resource path="res://gui/profile/Bar.tscn" type="PackedScene" id=2]
+[ext_resource path="res://gui/profile/magician/mana.png" type="Texture" id=3]
+
+[node name="Tab" type="VBoxContainer"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 0
+_sections_unfolded = [ "Anchor", "Margin" ]
+
+[node name="HSeparator4" type="HSeparator" parent="." index="0"]
+
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1600.0
+margin_bottom = 44.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.0
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="VBoxContainer2" type="HBoxContainer" parent="." index="1"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 48.0
+margin_right = 1600.0
+margin_bottom = 850.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 90.0
+alignment = 0
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer2" index="0"]
+
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 31.0
+margin_bottom = 802.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="HSlider" type="VSlider" parent="VBoxContainer2" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 35.0
+margin_right = 288.0
+margin_bottom = 802.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 8.0
+min_value = 0.0
+max_value = 100.0
+step = 1.0
+page = 0.0
+value = 0.0
+exp_edit = false
+rounded = false
+editable = true
+tick_count = 10
+ticks_on_borders = true
+focus_mode = 2
+_sections_unfolded = [ "Size Flags", "custom_icons", "custom_styles" ]
+
+[node name="VSeparator2" type="VSeparator" parent="VBoxContainer2" index="2"]
+
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 292.0
+margin_right = 323.0
+margin_bottom = 802.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2" index="3"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 327.0
+margin_right = 1277.0
+margin_bottom = 802.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 30.0
+alignment = 0
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer2/VBoxContainer" index="0"]
+
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 950.0
+margin_bottom = 235.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 30.0
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer2/VBoxContainer" index="1"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 239.0
+margin_right = 950.0
+margin_bottom = 388.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 19.0
+alignment = 0
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="Label" parent="VBoxContainer2/VBoxContainer/HBoxContainer" index="0" instance=ExtResource( 1 )]
+
+margin_top = 62.0
+margin_right = 39.0
+margin_bottom = 87.0
+text = "ATT"
+
+[node name="VSeparator4" type="VSeparator" parent="VBoxContainer2/VBoxContainer/HBoxContainer" index="1"]
+
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 43.0
+margin_right = 52.0
+margin_bottom = 149.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="Bar" parent="VBoxContainer2/VBoxContainer/HBoxContainer" index="2" instance=ExtResource( 2 )]
+
+margin_left = 56.0
+margin_right = 950.0
+margin_bottom = 149.0
+size_flags_stretch_ratio = 95.0
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer2/VBoxContainer" index="2"]
+
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 392.0
+margin_right = 950.0
+margin_bottom = 407.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer2/VBoxContainer" index="3"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 411.0
+margin_right = 950.0
+margin_bottom = 560.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 19.0
+alignment = 0
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="Label2" parent="VBoxContainer2/VBoxContainer/HBoxContainer2" index="0" instance=ExtResource( 1 )]
+
+margin_top = 62.0
+margin_right = 39.0
+margin_bottom = 87.0
+text = "MAN"
+
+[node name="VSeparator4" type="VSeparator" parent="VBoxContainer2/VBoxContainer/HBoxContainer2" index="1"]
+
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 43.0
+margin_right = 52.0
+margin_bottom = 149.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="Bar" parent="VBoxContainer2/VBoxContainer/HBoxContainer2" index="2" instance=ExtResource( 2 )]
+
+margin_left = 56.0
+margin_right = 950.0
+margin_bottom = 149.0
+size_flags_stretch_ratio = 95.0
+texture_progress = ExtResource( 3 )
+_sections_unfolded = [ "Size Flags", "Textures" ]
+
+[node name="HSeparator3" type="HSeparator" parent="VBoxContainer2/VBoxContainer" index="4"]
+
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 564.0
+margin_right = 950.0
+margin_bottom = 802.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 30.0
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="VSeparator4" type="VSeparator" parent="VBoxContainer2" index="4"]
+
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1281.0
+margin_right = 1600.0
+margin_bottom = 802.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 10.0
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="HSeparator5" type="HSeparator" parent="." index="2"]
+
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 854.0
+margin_right = 1600.0
+margin_bottom = 900.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.0
+_sections_unfolded = [ "Rect", "Size Flags" ]
+
+
