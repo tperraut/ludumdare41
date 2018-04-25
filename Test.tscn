@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Test.gd" type="Script" id=1]
 [ext_resource path="res://levels/bg.png" type="Texture" id=2]
@@ -7,11 +7,13 @@
 [ext_resource path="res://gui/profile/magician/UIMagician.tscn" type="PackedScene" id=5]
 [ext_resource path="res://characters/magician/Magician.tscn" type="PackedScene" id=6]
 [ext_resource path="res://characters/ennemi/Ennemi.tscn" type="PackedScene" id=7]
-[ext_resource path="res://gui/menu/Menu.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Popup.gd" type="Script" id=8]
+[ext_resource path="res://gui/menu/Menu.tscn" type="PackedScene" id=9]
 
 [node name="Test" type="Node" index="0"]
 
 script = ExtResource( 1 )
+_sections_unfolded = [ "Pause" ]
 
 [node name="ColorRect" type="TextureRect" parent="." index="0"]
 
@@ -33,7 +35,6 @@ _sections_unfolded = [ "Margin", "Pause" ]
 [node name="Gui" type="VBoxContainer" parent="." index="1"]
 
 pause_mode = 1
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -279,9 +280,10 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 popup_exclusive = false
+script = ExtResource( 8 )
 _sections_unfolded = [ "Pause", "Popup" ]
 
-[node name="Menu" parent="Popup" index="0" instance=ExtResource( 8 )]
+[node name="Menu" parent="Popup" index="0" instance=ExtResource( 9 )]
 
 anchor_left = 0.25
 anchor_top = 0.25
@@ -297,5 +299,7 @@ _sections_unfolded = [ "Anchor", "Margin", "Rect", "custom_fonts" ]
 [connection signal="cast" from="Ennemi" to="." method="_on_cast"]
 
 [connection signal="health_changed" from="Ennemi" to="Gui/HBoxContainer/UIEnnemi" method="_on_health_changed"]
+
+[connection signal="skiped" from="Popup/Menu" to="Popup" method="_on_Menu_skiped"]
 
 

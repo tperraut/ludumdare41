@@ -1,6 +1,6 @@
 extends Container
 
+signal skiped
+
 func _on_Button_pressed():
-	#TODO
-	Input.action_press("pause")
-	Input.action_release("pause")
+	emit_signal("skiped")
